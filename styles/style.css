@@ -1,0 +1,962 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.center {
+  max-width: 1216px;
+  margin: 0 auto;
+}
+
+img {
+  font-size: 0;
+}
+
+@font-face {
+  font-family: "Balsamiq Sans Regular";
+  src: url("../assets/fonts/BalsamiqSans-Regular.ttf");
+}
+html {
+  min-height: 100%;
+}
+
+body {
+  background-image: url("../assets/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 150px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.darken {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: rgba(41, 41, 41, 0.7);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.header-top {
+  margin-bottom: 70px;
+  background: #423b2b;
+  border-bottom: 7px solid #5d5347;
+  padding: 28px 0 18px 0;
+  box-sizing: border-box;
+  max-height: 120px;
+}
+.header-top .header-inside {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-top .header-inside .menu-button {
+  display: none;
+}
+.header-top .header-inside .header-nav {
+  display: flex;
+  justify-content: space-between;
+}
+.header-top .header-inside .header-nav a {
+  color: #a49982;
+  font-family: "Balsamiq Sans Regular";
+  font-size: 18px;
+  text-decoration: none;
+}
+.header-top .header-inside .header-nav a:not(:last-child) {
+  margin-right: 56px;
+}
+.header-top .header-inside .header-nav a:hover {
+  color: #fff;
+}
+.header-top .header-inside .profile-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-top .header-inside .profile-section p {
+  margin-right: 16px;
+  font-family: "Balsamiq Sans Regular";
+  color: #fff;
+  font-size: 18px;
+}
+.header-top .header-inside .profile-section button {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.header-top .header-inside .profile-section button:hover {
+  cursor: pointer;
+}
+.header-top .header-inside .profile-section .profile-photo {
+  margin-right: 25px;
+  position: relative;
+  z-index: 5;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-top .header-inside .profile-section .profile-photo img {
+  width: 44px;
+  height: 44px;
+  position: relative;
+  z-index: 20;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+.header-top .header-inside .profile-section .profile-photo::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 28px);
+  left: calc(50% - 28px);
+  width: 56px;
+  height: 56px;
+  box-sizing: border-box;
+  z-index: 5;
+  background: linear-gradient(#f3f3fe, #cecefa);
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+.app {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.app .sidebar-nav {
+  padding: 70px;
+  display: flex;
+  flex-direction: column;
+  background: #423b2b;
+  border: 7px solid #5d5347;
+  border-radius: 14px;
+  max-width: 26%;
+  box-sizing: border-box;
+}
+.app .sidebar-nav .header-links {
+  display: none;
+}
+.app .sidebar-nav a {
+  color: #a49982;
+  font-family: "Balsamiq Sans Regular";
+  font-size: 18px;
+  text-decoration: none;
+}
+.app .sidebar-nav a:not(:last-child) {
+  margin-bottom: 18px;
+}
+.app .sidebar-nav a:hover {
+  color: #fff;
+}
+.app .sidebar-nav .active {
+  color: #fff;
+}
+.app .main-content {
+  width: 70%;
+}
+.app .main-content .content-block {
+  background: #423b2b;
+  border: 7px solid #5d5347;
+  border-radius: 14px;
+  padding: 65px 70px 60px 70px;
+}
+.app .main-content .content-block header {
+  margin-bottom: 30px;
+}
+.app .main-content .content-block header h1 {
+  font-family: "Balsamiq Sans Regular";
+  font-size: 24px;
+  color: #fff;
+  font-weight: normal;
+}
+.app .main-content .content-block .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app .main-content .content-block .content .profile-actions {
+  display: inline-block;
+}
+.app .main-content .content-block .content .profile-actions .profile {
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.app .main-content .content-block .content .profile-actions .profile .profile-image {
+  position: relative;
+  z-index: 5;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.app .main-content .content-block .content .profile-actions .profile .profile-image img {
+  width: 72px;
+  height: 72px;
+  position: relative;
+  z-index: 20;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+.app .main-content .content-block .content .profile-actions .profile .profile-image::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 43px);
+  left: calc(50% - 43px);
+  width: 86px;
+  height: 86px;
+  z-index: 5;
+  box-sizing: border-box;
+  background: linear-gradient(#f3f3fe, #cecefa);
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+.app .main-content .content-block .content .profile-actions .profile .profile-name {
+  margin-left: 20px;
+  font-family: "Balsamiq Sans Regular";
+}
+.app .main-content .content-block .content .profile-actions .profile .profile-name .name {
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.app .main-content .content-block .content .profile-actions .profile .profile-name .profile-email {
+  font-size: 16px;
+  color: #a49982;
+  font-weight: bold;
+}
+.app .main-content .content-block .content .profile-actions .edit-profile {
+  display: flex;
+  align-items: center;
+}
+.app .main-content .content-block .content .profile-actions .edit-profile button.edit {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-right: 15px;
+}
+.app .main-content .content-block .content .profile-actions .edit-profile button.edit:hover {
+  cursor: pointer;
+}
+.app .main-content .content-block .content .profile-actions .edit-profile p {
+  max-width: 120px;
+  position: relative;
+  top: -2px;
+  color: #a49982;
+  font-family: "Balsamiq Sans Regular";
+  font-size: 16px;
+}
+.app .main-content .content-block .content .profile-info {
+  max-width: 150px;
+}
+.app .main-content .content-block .content .profile-info .profile-stats {
+  margin-bottom: 50px;
+}
+.app .main-content .content-block .content .profile-info .profile-stats p {
+  font-family: "Balsamiq Sans Regular";
+  color: #a49982;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+.app .main-content .content-block .content .profile-info .profile-stats p:first-of-type {
+  margin-bottom: 10px;
+}
+.app .main-content .content-block .content .profile-info .profile-stats p span {
+  font-weight: normal;
+  color: #fff;
+  justify-self: flex-end;
+}
+.app .main-content .content-block .content .profile-info .profile-friends h1 {
+  font-family: "Balsamiq Sans Regular";
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.app .main-content .content-block .content .profile-info .profile-friends h1 .friends-number {
+  margin-left: 6px;
+  color: #a49982;
+}
+.app .main-content .content-block .content .profile-info .profile-friends .friends-list {
+  display: flex;
+}
+.app .main-content .content-block .content .profile-info .profile-friends .friends-list:hover {
+  cursor: pointer;
+}
+.app .main-content .content-block .content .profile-info .profile-friends .friends-list img {
+  max-width: 40px;
+  max-height: 40px;
+  box-sizing: border-box;
+  position: relative;
+  border: 4px solid #423b2b;
+  border-radius: 50%;
+}
+
+header.friends-header {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header.friends-header h1 {
+  font-family: "Balsamiq Sans Regular";
+  font-weight: bold;
+  font-size: 24px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+header.friends-header h1 span {
+  color: #a49982;
+}
+header.friends-header h1 span:first-of-type {
+  margin-right: 12px;
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+}
+header.friends-header .back {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header.friends-header .back p {
+  font-family: "Balsamiq Sans Regular";
+  font-size: 18px;
+  color: #a49982;
+  margin-right: 15px;
+}
+header.friends-header .back button {
+  background: transparent;
+  outline: none;
+  border: none;
+}
+header.friends-header .back button:hover {
+  cursor: pointer;
+}
+
+div.friends-number {
+  margin-bottom: 35px;
+}
+div.friends-number p {
+  font-family: "Balsamiq Sans Regular";
+  font-size: 18px;
+  color: #fff;
+}
+div.friends-number p span:last-child {
+  color: #a49982;
+  margin-left: 12px;
+}
+
+.friends-table .friend-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.friends-table .friend-item:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+.friends-table .friend-item .friend-profile-photo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+.friends-table .friend-item .friend-profile-photo img {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  position: relative;
+  z-index: 20;
+}
+.friends-table .friend-item .friend-profile-photo::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 36px);
+  left: calc(50% - 36px);
+  width: 72px;
+  height: 72px;
+  box-sizing: border-box;
+  z-index: 5;
+  background: linear-gradient(#f3f3fe, #cecefa);
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+.friends-table .friend-item .friend-text {
+  margin-left: 20px;
+}
+.friends-table .friend-item .friend-text p {
+  font-family: "Balsamiq Sans Regular";
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.friends-table .friend-item .friend-text button {
+  font-family: "Balsamiq Sans Regular";
+  font-size: 16px;
+  color: #a49982;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.friends-table .friend-item .friend-text button:hover {
+  cursor: pointer;
+}
+.friends-table .friend-item .options-button {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.friends-table .friend-item .options-button:hover {
+  cursor: pointer;
+}
+
+div.content-block.balance {
+  display: none;
+}
+div.content-block.balance header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+div.content-block.balance header .balance-stats {
+  width: 150px;
+}
+div.content-block.balance header .balance-stats p {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Balsamiq Sans Regular";
+  font-size: 18px;
+  color: #a49982;
+  font-weight: bold;
+}
+div.content-block.balance header .balance-stats p:first-of-type {
+  margin-bottom: 10px;
+}
+div.content-block.balance header .balance-stats p span {
+  color: #fff;
+  font-weight: normal;
+}
+div.content-block.balance form {
+  position: relative;
+}
+div.content-block.balance form:first-of-type {
+  padding-bottom: 36px;
+}
+div.content-block.balance form:last-of-type {
+  padding-top: 36px;
+  border-top: 1px solid #a49982;
+}
+div.content-block.balance form fieldset {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+}
+div.content-block.balance form fieldset div.fieldset-input {
+  position: relative;
+  max-width: 210px;
+}
+div.content-block.balance form fieldset legend {
+  font-family: "Balsamiq Sans Regular";
+  font-weight: bold;
+  font-size: 18px;
+  color: #a49982;
+  margin-bottom: 10px;
+}
+div.content-block.balance form fieldset div.input-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 16px 22px;
+  background-color: #fff;
+  border-radius: 10px;
+  color: #a49982;
+  font-family: "Balsamiq Sans Regular";
+  font-size: 18px;
+  cursor: text;
+  box-sizing: border-box;
+  font-weight: bold;
+  max-width: 210px;
+}
+div.content-block.balance form fieldset div.input-overlay i {
+  display: inline-flex;
+  align-items: center;
+}
+div.content-block.balance form fieldset div.input-overlay i svg {
+  margin-left: 5px;
+}
+div.content-block.balance form fieldset input {
+  max-width: 210px;
+  padding: 16px 22px;
+  color: #a49982;
+  font-family: "Balsamiq Sans Regular";
+  font-size: 18px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+div.content-block.balance form fieldset button {
+  background: #1aec87;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-family: "Balsamiq Sans Regular";
+  font-size: 16px;
+  color: #fff;
+  padding: 16px 32px;
+}
+div.content-block.balance form fieldset button:hover {
+  cursor: pointer;
+}
+div.content-block.balance form fieldset button:focus, div.content-block.balance form fieldset button:active {
+  background: #18c672;
+  box-shadow: none;
+}
+
+div.content-block.balance-replenishment {
+  display: none;
+  margin-top: 32px;
+  overflow-x: hidden;
+}
+div.content-block.balance-replenishment header h1 {
+  font-family: "Balsamiq Sans Regular";
+  font-size: 24px;
+  color: #fff;
+  font-weight: normal;
+}
+div.content-block.balance-replenishment table {
+  width: 100%;
+  overflow: scroll;
+}
+div.content-block.balance-replenishment table tr {
+  border-collapse: collapse;
+}
+div.content-block.balance-replenishment table tr th {
+  font-family: "Balsamiq Sans Regular";
+  font-size: 18px;
+  color: #a49982;
+  font-weight: normal;
+  text-align: right;
+  padding: 20px 0;
+}
+div.content-block.balance-replenishment table tr th:first-of-type {
+  text-align: left;
+}
+div.content-block.balance-replenishment table tr td {
+  font-family: "Balsamiq Sans Regular";
+  font-size: 18px;
+  color: #fff;
+  font-weight: normal;
+  text-align: right;
+  padding: 20px 0;
+}
+div.content-block.balance-replenishment table tr td:first-of-type {
+  text-align: left;
+}
+div.content-block.balance-replenishment table tr .in-process {
+  color: #f91212;
+}
+div.content-block.balance-replenishment table tr .credited {
+  color: #1aec87;
+}
+div.content-block.balance-replenishment table tr:not(:last-of-type) {
+  border-bottom: 1px solid #a49982 !important;
+}
+
+.content-block.payout {
+  display: none;
+}
+.content-block.payout .payout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.content-block.payout .payout-header .balance-stats {
+  width: 150px;
+}
+.content-block.payout .payout-header .balance-stats p {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Balsamiq Sans Regular";
+  font-size: 18px;
+  color: #a49982;
+  font-weight: bold;
+}
+.content-block.payout .payout-header .balance-stats p:first-of-type {
+  margin-bottom: 10px;
+}
+.content-block.payout .payout-header .balance-stats p span {
+  color: #fff;
+  font-weight: normal;
+}
+.content-block.payout form#payout-form fieldset {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+}
+.content-block.payout form#payout-form fieldset legend {
+  font-family: "Balsamiq Sans Regular";
+  font-weight: bold;
+  font-size: 18px;
+  color: #a49982;
+  margin-bottom: 10px;
+}
+.content-block.payout form#payout-form fieldset input {
+  max-width: 210px;
+  padding: 16px 22px;
+  color: #a49982;
+  font-family: "Balsamiq Sans Regular";
+  font-size: 18px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+.content-block.payout form#payout-form fieldset input::placeholder {
+  color: #a49982;
+}
+.content-block.payout form#payout-form fieldset button {
+  background: #1aec87;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-family: "Balsamiq Sans Regular";
+  font-size: 16px;
+  color: #fff;
+  padding: 16px 32px;
+}
+.content-block.payout form#payout-form fieldset button:hover {
+  cursor: pointer;
+}
+.content-block.payout form#payout-form fieldset button:focus, .content-block.payout form#payout-form fieldset button:active {
+  background: #18c672;
+  box-shadow: none;
+}
+
+.content-block.payout-history {
+  margin-top: 30px;
+  display: none;
+}
+.content-block.payout-history .payout-history-header h1 {
+  font-family: "Balsamiq Sans Regular";
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+.content-block.payout-history .payout-history-table {
+  width: 100%;
+}
+.content-block.payout-history .payout-history-table tr {
+  border-collapse: collapse;
+}
+.content-block.payout-history .payout-history-table tr th {
+  font-family: "Balsamiq Sans Regular";
+  font-size: 18px;
+  color: #a49982;
+  font-weight: normal;
+  text-align: right;
+  padding: 20px 0;
+}
+.content-block.payout-history .payout-history-table tr th:first-of-type {
+  text-align: left;
+}
+.content-block.payout-history .payout-history-table tr td {
+  font-family: "Balsamiq Sans Regular";
+  font-size: 18px;
+  color: #fff;
+  font-weight: normal;
+  text-align: right;
+  padding: 20px 0;
+}
+.content-block.payout-history .payout-history-table tr td:first-of-type {
+  text-align: left;
+}
+.content-block.payout-history .payout-history-table tr .in-process {
+  color: #f91212;
+}
+.content-block.payout-history .payout-history-table tr .credited {
+  color: #1aec87;
+}
+.content-block.payout-history .payout-history-table tr:not(:last-of-type) {
+  border-bottom: 1px solid #a49982;
+}
+
+.content-block.game-rules {
+  display: none;
+}
+.content-block.game-rules a {
+  color: #a49982;
+  text-decoration: none;
+  font-family: "Balsamiq Sans Regular";
+  font-size: 18px;
+}
+
+@media (max-width: 375px) {
+  .header-top {
+    padding-top: 20px;
+    padding-bottom: 16px;
+    margin-bottom: 40px;
+  }
+  .header-top .header-inside {
+    padding: 0 16px;
+  }
+  .header-top .header-inside > img {
+    display: none;
+  }
+  .header-top .header-inside .header-nav {
+    display: none;
+  }
+  .header-top .header-inside .profile-section {
+    display: none;
+  }
+  .header-top .header-inside .menu-button {
+    display: block;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .app .sidebar-nav {
+    transition: all 0.3s ease-in-out;
+    z-index: 20;
+    position: fixed;
+    height: calc(100vh - 60px);
+    left: calc(-100vw - 7px);
+    bottom: -7px;
+    width: 90vw;
+    max-width: 90vw;
+    overflow-y: auto;
+  }
+  .app .sidebar-nav .header-links {
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #a49982;
+  }
+  .app .sidebar-nav .header-links a {
+    margin-bottom: 22px;
+  }
+  .app main.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    left: 0;
+    box-sizing: border-box;
+  }
+  .app main.main-content .content-block {
+    width: 341px;
+    box-sizing: border-box;
+    padding: 45px 40px 40px 40px;
+  }
+  .app main.main-content .content-block.profile-block .content-header {
+    margin-bottom: 25px;
+  }
+  .app main.main-content .content-block.profile-block .content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .app main.main-content .content-block.profile-block .content .profile-actions {
+    margin-bottom: 36px;
+  }
+  .app main.main-content .content-block.profile-block .content .profile-actions .profile {
+    margin-bottom: 37px;
+  }
+  .app main.main-content .content-block.profile-block .content .profile-actions .profile .profile-image::before {
+    display: none;
+  }
+  .app main.main-content .content-block.profile-block .content .profile-actions .profile .profile-image img {
+    border-radius: 4px;
+    border: none;
+  }
+  .app main.main-content .content-block.profile-block .content .profile-actions .profile .profile-name {
+    margin-left: 15px;
+  }
+  .app main.main-content .content-block.profile-block .content .profile-actions .profile .profile-name .name {
+    font-weight: 700;
+    margin-bottom: 7px;
+  }
+  .app main.main-content .content-block.profile-block .content .profile-actions .profile .profile-name .profile-email {
+    font-size: 14px;
+    font-weight: normal;
+  }
+  .app main.main-content .content-block.profile-block .content .profile-info .profile-stats {
+    margin-bottom: 30px;
+  }
+  .app main.main-content .content-block.profile-block .content .profile-info .profile-friends h1 {
+    font-weight: 400;
+  }
+  .app main.main-content .content-block header.friends-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+  .app main.main-content .content-block header.friends-header h1 {
+    margin-bottom: 16px;
+  }
+  .app main.main-content .content-block header.friends-header .back button {
+    order: 1;
+  }
+  .app main.main-content .content-block header.friends-header .back p {
+    order: 2;
+    margin-right: 0;
+    margin-left: 15px;
+  }
+  .app main.main-content .content-block .friends-number {
+    margin-bottom: 33px;
+  }
+  .app main.main-content .content-block .friends-number p span {
+    color: #a49982;
+  }
+  .app main.main-content .content-block .friends-number p .friends-number-span {
+    color: #9499a6;
+    margin-left: 6px;
+  }
+  .app main.main-content .content-block .friends-table .friend-item .friend-profile-photo img {
+    width: 56px;
+    height: 56px;
+  }
+  .app main.main-content .content-block .friends-table .friend-item .friend-profile-photo::before {
+    width: 68px;
+    height: 68px;
+    top: calc(50% - 34px);
+    left: calc(50% - 34px);
+  }
+  .app main.main-content .content-block .friends-table .friend-item .friend-text {
+    margin-left: 13px;
+  }
+  .app main.main-content .content-block .friends-table .friend-item .friend-text button {
+    font-size: 12px;
+    color: #949ca3;
+  }
+  .app main.main-content .content-block .friends-table .friend-item .options-button img {
+    width: 35px;
+    height: 33px;
+  }
+  .app main.main-content .content-block.balance .balance-header {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .app main.main-content .content-block.balance .balance-header h1 {
+    margin-bottom: 22px;
+  }
+  .app main.main-content .content-block.balance form fieldset {
+    flex-direction: column;
+  }
+  .app main.main-content .content-block.balance form fieldset legend {
+    margin-bottom: 13px;
+    color: #fff;
+    font-weight: normal;
+  }
+  .app main.main-content .content-block.balance form fieldset .fieldset-input {
+    max-width: 210px;
+  }
+  .app main.main-content .content-block.balance form fieldset .fieldset-input input {
+    width: 100%;
+  }
+  .app main.main-content .content-block.balance form fieldset button {
+    margin-top: 22px;
+    max-width: 145px;
+  }
+  .app main.main-content .content-block.balance form#z-ruble-form {
+    padding-bottom: 32px;
+  }
+  .app main.main-content .content-block.balance form#energy-form {
+    padding-top: 24px;
+  }
+  .app main.main-content .content-block.balance-replenishment {
+    margin-top: 24px;
+    padding-right: 0;
+    overflow: hidden;
+  }
+  .app main.main-content .content-block.balance-replenishment .table-outer {
+    max-width: 100%;
+    display: flex;
+    overflow: scroll;
+  }
+  .app main.main-content .content-block.balance-replenishment .table-outer table {
+    min-width: 490px;
+    width: 100%;
+    position: relative;
+    height: 100%;
+    overflow: scroll;
+  }
+  .app main.main-content .content-block.balance-replenishment .table-outer table::before {
+    content: "";
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -40px;
+  }
+  .app main.main-content .content-block.balance-replenishment .table-outer table tbody {
+    overflow: scroll;
+  }
+  .app main.main-content .content-block.payout .payout-header {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .app main.main-content .content-block.payout .payout-header h1 {
+    margin-bottom: 22px;
+  }
+  .app main.main-content .content-block.payout form#payout-form fieldset {
+    flex-direction: column;
+  }
+  .app main.main-content .content-block.payout form#payout-form fieldset legend {
+    margin-bottom: 13px;
+    color: #fff;
+    font-weight: normal;
+  }
+  .app main.main-content .content-block.payout form#payout-form fieldset input {
+    width: 210px;
+  }
+  .app main.main-content .content-block.payout form#payout-form fieldset button {
+    margin-top: 22px;
+    max-width: 145px;
+  }
+  .app main.main-content .content-block.payout-history {
+    margin-top: 24px;
+  }
+  .app main.main-content .content-block.payout-history .table-outer {
+    max-width: 100%;
+    display: flex;
+    overflow: scroll;
+  }
+  .app main.main-content .content-block.payout-history .table-outer table {
+    min-width: 490px;
+    width: 100%;
+    position: relative;
+    height: 100%;
+    overflow: scroll;
+  }
+  .app main.main-content .content-block.payout-history .table-outer table::before {
+    content: "";
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -40px;
+  }
+  .app main.main-content .content-block.payout-history .table-outer table tbody {
+    overflow: scroll;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
