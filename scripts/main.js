@@ -1,9 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // navigation
   let nav = document.querySelector("nav.sidebar-nav");
-  let current = String(document.URL).slice(String(document.URL).indexOf("#"));
-  // document
-  //   .querySelector(`a[href="${current}"]`)
   //   .dispatchEvent(new Event("click"));
 
   nav.addEventListener("click", (e) => {
@@ -227,3 +223,15 @@ if (window.matchMedia("(max-width: 375px)").matches) {
     }
   });
 }
+
+window.addEventListener("load", () => {
+  // navigation
+  let nav = document.querySelector("nav.sidebar-nav");
+  let current = String(document.URL).slice(String(document.URL).indexOf("#"));
+  let link = nav.querySelector(`a[href="${current}"]`);
+  if (!String(document.URL).includes("#")) {
+    link = nav.querySelector(".profile-link");
+  }
+  // link.dispatchEvent(new Event("click"));
+  link.click();
+});

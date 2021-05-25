@@ -111,6 +111,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  padding: 0 32px;
+  box-sizing: border-box;
   .sidebar-nav {
     .header-links {
       display: none;
