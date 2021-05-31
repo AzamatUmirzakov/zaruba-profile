@@ -166,6 +166,9 @@ body {
   border-radius: 14px;
   padding: 65px 70px 60px 70px;
 }
+.app .main-content .content-block a:hover {
+  color: #fff;
+}
 .app .main-content .content-block header {
   margin-bottom: 30px;
 }

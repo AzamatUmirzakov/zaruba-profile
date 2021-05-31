@@ -146,6 +146,11 @@ body {
   .main-content {
     width: 70%;
     .content-block {
+      a {
+        &:hover {
+          color: #fff;
+        }
+      }
       background: #423b2b;
       border: 7px solid #5d5347;
       border-radius: 14px;
