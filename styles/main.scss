@@ -1,3 +1,7 @@
+*:focus {
+  outline: none;
+  outline: 1px solid #fff;
+}
 body {
   background-image: url("../assets/background.jpg");
   background-size: 100%;
@@ -42,8 +46,11 @@ body {
     &:not(:last-child) {
       margin-bottom: 18px;
     }
-    &:hover {
+    &:hover,
+    &:focus {
       color: #fff;
+      border: none;
+      outline: none;
     }
   }
   .active {

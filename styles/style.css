@@ -16,6 +16,11 @@ img {
   font-family: "Balsamiq Sans Regular";
   src: url("../assets/fonts/BalsamiqSans-Regular.ttf");
 }
+*:focus {
+  outline: none;
+  outline: 1px solid #fff;
+}
+
 body {
   background-image: url("../assets/background.jpg");
   background-size: 100%;
@@ -69,8 +74,10 @@ body::before {
 .sidebar-nav a:not(:last-child) {
   margin-bottom: 18px;
 }
-.sidebar-nav a:hover {
+.sidebar-nav a:hover, .sidebar-nav a:focus {
   color: #fff;
+  border: none;
+  outline: none;
 }
 .sidebar-nav .active {
   color: #fff;
