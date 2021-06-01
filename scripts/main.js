@@ -216,7 +216,7 @@ menu_button.addEventListener("click", () => {
   }
 });
 
-if (window.matchMedia("(max-width: 375px)").matches) {
+if (window.matchMedia("(max-width: 850px)").matches) {
   document.querySelector("nav.sidebar-nav").addEventListener("click", (e) => {
     if (e.target.tagName == "A") {
       menu_button.dispatchEvent(new Event("click"));
