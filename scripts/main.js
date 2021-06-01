@@ -190,6 +190,7 @@ menu_button.addEventListener("click", () => {
   let status = menu_button.dataset.status;
   if (status == "off") {
     document.querySelector("nav.sidebar-nav").style.left = "-7px";
+    document.querySelector("nav.sidebar-nav").style.transform = "translateZ(0)";
     document.querySelector(".darken").style.zIndex = 20;
     document.querySelector(".darken").style.opacity = "1";
     menu_button.dataset.status = "on";
@@ -209,6 +210,7 @@ menu_button.addEventListener("click", () => {
     // }, 0);
   } else {
     document.querySelector("nav.sidebar-nav").style.left = "calc(-100vw - 7px)";
+    document.querySelector("nav.sidebar-nav").style.transform = "translateZ(0)";
     menu_button.dataset.status = "off";
     document.querySelector(".darken").style.zIndex = -1;
     document.querySelector(".darken").style.opacity = "0";
