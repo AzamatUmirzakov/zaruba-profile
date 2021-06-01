@@ -45,6 +45,7 @@ body::before {
   border-radius: 14px;
   max-width: 26%;
   box-sizing: border-box;
+  position: static;
   padding: 70px;
   display: flex;
   flex-direction: column;

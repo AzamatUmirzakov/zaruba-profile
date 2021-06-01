@@ -179,6 +179,10 @@ document.addEventListener("DOMContentLoaded", () => {
       div.style.display = "";
     });
   }
+
+  document
+    .querySelector(".app")
+    .prepend(document.querySelector(".sidebar-nav"));
 });
 
 let menu_button = document.querySelector(".nav-adaptive button");
