@@ -20,10 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector(
         "div.content-block.balance-replenishment"
       ).style.display = "block";
-    } else if (needed == "#payout") {
-      document.querySelector(".content-block.payout").style.display = "block";
-      document.querySelector(".content-block.payout-history").style.display =
-        "block";
     } else if (needed == "#rules") {
       document.querySelector(".content-block.game-rules").style.display =
         "block";
@@ -185,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-let menu_button = document.querySelector("button.menu-button");
+let menu_button = document.querySelector(".nav-adaptive button");
 menu_button.addEventListener("click", () => {
   let status = menu_button.dataset.status;
   if (status == "off") {
@@ -217,8 +213,9 @@ menu_button.addEventListener("click", () => {
 });
 
 if (window.matchMedia("(max-width: 850px)").matches) {
+  document.body.prepend(document.querySelector("nav.sidebar-nav"));
   document.querySelector("nav.sidebar-nav").addEventListener("click", (e) => {
-    if (e.target.tagName == "A") {
+    if (e.target.matches(".sidebar-nav > a")) {
       menu_button.dispatchEvent(new Event("click"));
     }
   });
