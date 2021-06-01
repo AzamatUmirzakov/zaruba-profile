@@ -24,6 +24,8 @@ body {
   box-sizing: border-box;
   min-height: 100vh;
   background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
 }
 body::before {
   content: "";
@@ -638,6 +640,7 @@ div.content-block.balance-replenishment table tr:not(:last-of-type) {
 }
 
 footer.page-footer {
+  margin-top: auto;
   background: #eda00b;
   padding: 42px 20px;
   text-align: center;

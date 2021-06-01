@@ -6,6 +6,8 @@ body {
   box-sizing: border-box;
   min-height: 100vh;
   background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
   &::before {
     content: "";
     position: absolute;
@@ -648,6 +650,7 @@ div.content-block.balance-replenishment {
 }
 
 footer.page-footer {
+  margin-top: auto;
   background: #eda00b;
   padding: 42px 20px;
   text-align: center;
